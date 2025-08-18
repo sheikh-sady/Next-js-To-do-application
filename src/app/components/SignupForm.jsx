@@ -1,0 +1,47 @@
+"use client";
+import Button from "./Button";
+import InputField from "./InputField";
+import { useRouter } from "next/navigation";
+const SignupForm = ({
+  name,
+  email,
+  password,
+  setEmail,
+  setPassword,
+  setName,
+  onClick,
+}) => {
+  const router = useRouter()
+  return (
+    <div className=" m-4 w-60 h-80 border-2 rounded-2xl border-neutral-950 flex flex-col gap-5 justify-center items-center">
+      <p className="text-2xl text-neutral-950 font-bold">Signup</p>
+      <InputField
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <InputField
+        type="email"
+        placeholder="Enter email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <InputField
+        type="password"
+        placeholder="Enter password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <Button
+        className="w-50 h-7 text-white text-center bg-neutral-950 rounded-xl hover:cursor-pointer hover:bg-neutral-800"
+        onClick={onClick}
+        label="Signup"
+      />
+      <p className = "text-xs">Already Registered? <button className=" underline hover:cursor-pointer hover:text-neutral-500" onClick={(e)=> router.push("/login")}>Login</button></p>
+    </div>
+  );
+};
+export default SignupForm;
