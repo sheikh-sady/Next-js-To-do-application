@@ -7,9 +7,9 @@ import { handleLogin } from "../services/AuthService";
 import AuthPage from "../pages/AuthPage";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const router = useRouter();
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const router = useRouter();
 
   //   const handleLogin = async () => {
   //   const res = await fetch('/api/login', {
