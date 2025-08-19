@@ -18,10 +18,10 @@ const ProfilePage = ({ user }) => {
           </p>
         </div>
         <ButtonComponent
-          icon={<EditIcon />}
+          icon={<EditIcon width="20px" height="20px"/>}
           label="Edit Profile"
           onClick={() => alert("Profile Edit")}
-          properties="font-bold bg-gradient-to-r from-violet-600 to-cyan-600"
+          properties="bg-gradient-to-r from-violet-600 to-cyan-600"
         />
       </div>
       <div className="flex flex-col lg:flex-row gap-6">
