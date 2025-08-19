@@ -1,10 +1,10 @@
-const ProfileIcon = ({className}) => {
+const ProfileIcon = ({ className,color }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="#000000"
-      width="20px"
-      height="20px"
+      fill={color}
+      width="18px"
+      height="18px"
       viewBox="0 0 24 24"
       className={className}
     >

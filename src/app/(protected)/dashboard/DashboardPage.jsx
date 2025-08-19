@@ -9,6 +9,7 @@ import {
   filterByPriority,
   handleSearch,
 } from "@/app/services/TodoService";
+import { supabase } from "@/app/supabaseClient";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -22,26 +23,27 @@ const DashboardPage = ({ user }) => {
   const { todos } = useTodos();
   const router = useRouter();
 
- useEffect(() => {
-  let result = todos;
+  
 
-  // Apply category filter
-  result = filterByCategory(result, filterCategory);
+  useEffect(() => {
+    let result = todos;
 
-  // Apply search filter
-  result = handleSearch(searchInput, result);
+    // Apply category filter
+    result = filterByCategory(result, filterCategory);
 
-  // Apply priority filter
-  result = filterByPriority(result, filterPriority);
+    // Apply search filter
+    result = handleSearch(searchInput, result);
 
-  // Finally update state once
-  setFilteredTodos(result);
-}, [todos, filterPriority, filterCategory, searchInput]);
+    // Apply priority filter
+    result = filterByPriority(result, filterPriority);
 
+    // Finally update state once
+    setFilteredTodos(result);
+  }, [todos, filterPriority, filterCategory, searchInput]);
 
   return (
     <>
-      {user && (
+      
         <div className="w-full mb-5 flex flex-col gap-6">
           <div className="flex flex-col gap-5">
             <p className="text-3xl font-bold">Task Board</p>
@@ -70,7 +72,7 @@ const DashboardPage = ({ user }) => {
             filterPriority={filterPriority}
           />
         </div>
-      )}
+     
     </>
   );
 };

@@ -76,7 +76,7 @@ const TodoForm = ({
             title={category ? category : "Personal"}
             icon1={<></>}
             icon2={<DropDownIcon />}
-            items={categories}
+            items={categories.slice(1,categories.length)}
           />
         </div>
         <div className="flex-1 flex flex-col gap-1">

@@ -1,22 +1,27 @@
 "use client";
 // import { useUser } from "../context/UserContext";
-export async function handleLogin(email, password,router) {
+
+export async function signUpUser(name, email, password) {
+  const res = await fetch("/api/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, email, password }),
+  });
+
+  const data = await res.json();
+  return data;
+}
+
+export async function signInuser(email, password) {
   // const {setUser} = useUser()
   const res = await fetch("/api/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
   });
-  const response = await res.json()
-  if (!res.ok) {
-    console.log("Error logging in...");
-  } else {
-    router.push("/");
-    router.refresh()
-    console.log("success");
-    
-  }
-}  
+  const response = await res.json();
+  return response;
+}
 
 export async function handleLogout(router) {
   try {
@@ -40,4 +45,3 @@ export async function handleLogout(router) {
     console.log("Error logging out...");
   }
 }
-

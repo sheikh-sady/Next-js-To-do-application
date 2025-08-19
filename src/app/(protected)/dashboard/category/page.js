@@ -69,7 +69,7 @@ const CategoryPage = () => {
           icon={<PlusIcon />}
           label="Add Categories"
           onClick={() => setCategoryFormOpen(true)}
-          properties="font-bold bg-gradient-to-r from-violet-600 to-cyan-600"
+          properties="bg-gradient-to-r from-violet-600 to-cyan-600"
         />
       </div>
 
@@ -89,7 +89,12 @@ const CategoryPage = () => {
       {categoryFormOpen && (
         <Modal
           isOpen={categoryFormOpen}
-          onClose={() => setCategoryFormOpen(false)}
+          onClose={() => {
+            setCategoryFormOpen(false)
+            setName('')
+            setColor('')
+            setIcon('')
+          }}
         >
           <CategoryForm
             caption="Create New Category"

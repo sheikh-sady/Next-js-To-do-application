@@ -29,7 +29,7 @@ const CategoryForm = ({
         type="text"
         onChange={(e) => setName(e.target.value)}
         // onBlur={() => setNewTodo("")}
-        className="h-12 font-medium text-xs"
+        className="h-12 text-xs"
       />
       {hasSpecialChars(name) ? (
         <p className="text-red-400 text-xs font-medium">
@@ -50,7 +50,7 @@ const CategoryForm = ({
         type="text"
         onChange={(e) => setColor(e.target.value)}
         // onBlur={() => setNewTodo("")}
-        className="h-12 font-medium text-xs"
+        className="h-12 text-xs"
       />
       <p>Icon</p>
       <InputField
@@ -59,7 +59,7 @@ const CategoryForm = ({
         type="text"
         onChange={(e) => setIcon(e.target.value)}
         // onBlur={() => setNewTodo("")}
-        className="h-12 font-medium text-xs"
+        className="h-12 text-xs"
       />
       <div className="flex justify-between gap-4">
         <ButtonComponent

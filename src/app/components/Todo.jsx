@@ -159,7 +159,15 @@ const Todo = ({ todo, status, filteredTodos }) => {
         </div>
 
         <div className="flex justify-start gap-2 text-xs text-white">
-          <div className="content-center text-center w-20 h-6 bg-red-400 rounded-xl">
+          <div
+            className={`content-center text-center w-20 h-6 ${
+              todo.priority === "Low"
+                ? "bg-green-400"
+                : todo.priority === "Medium"
+                ? "bg-yellow-400"
+                : "bg-red-400"
+            }  rounded-xl`}
+          >
             {todo.priority}
           </div>
           <div

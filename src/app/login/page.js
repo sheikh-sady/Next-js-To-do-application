@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import LoginForm from "../components/LoginForm";
 import { handleLogin } from "../services/AuthService";
+import AuthPage from "../pages/AuthPage";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -26,16 +27,19 @@ export default function LoginPage() {
   // }
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center">
-      <LoginForm
-        email={email}
-        password={password}
-        setEmail={setEmail}
-        setPassword={setPassword}
-        onClick={() => {
-          handleLogin(email, password, router);
-        }}
-      />
-    </div>
+    // <div className="h-screen w-screen flex justify-center items-center">
+    //   <LoginForm
+    //     email={email}
+    //     password={password}
+    //     setEmail={setEmail}
+    //     setPassword={setPassword}
+    //     onClick={() => {
+    //       handleLogin(email, password, router);
+    //     }}
+    //   />
+    // </div>
+    <>
+      <AuthPage />
+    </>
   );
 }
