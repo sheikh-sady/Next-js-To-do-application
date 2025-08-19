@@ -65,7 +65,7 @@ const TodoForm = ({
           value={description}
           placeholder={description ? "" : "Enter task description"}
           onChange={(e) => setDescription(e.target.value)}
-          className="h-20 font-medium text-sm"
+          className="h-20 text-sm"
         />
       </div>
       <div className="flex justify-between gap-2">
