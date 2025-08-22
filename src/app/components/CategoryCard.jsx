@@ -107,7 +107,7 @@ const CategoryCard = ({ setCategories, category }) => {
           <p className="text-sm text-gray-600 font-medium">Category</p>
         </div>
 
-        <div className="flex justify-between gap-2">
+        <div className={`flex justify-between gap-2 ${category.name === 'Personal' ? 'text-gray-400 pointer-events-none':''}`}>
           <EditIcon
             width="20px"
             height="20px"
@@ -117,6 +117,7 @@ const CategoryCard = ({ setCategories, category }) => {
             width="20px"
             height="20px"
             onClick={() => handleDelete()}
+            color={category.name ==="Personal"?"":"text-red-500"}
           />
         </div>
       </div>

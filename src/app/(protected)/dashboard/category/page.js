@@ -22,28 +22,17 @@ const CategoryPage = () => {
     else setButtonActive(true);
   }, [name]);
 
-  const addCategory = async () => {
-    if (!hasLetters(name) || hasSpecialChars(name) || name === undefined)
-      return alert("Invalid input");
-    const res = await fetch("/api/categories", {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name: name, color: color, icon: icon }),
-    });
-    const response = await res.json();
-    if (response.error) console.log("Couldnot add category");
-    else console.log("Category added");
-
-    setCategoryFormOpen(false);
-    setCategories((prev) => [...prev, response.category]);
-    setColor("");
-    setIcon("");
-    setName("");
-  };
+ 
   const handleSubmit = async () => {
+    let dupliacte = false
+    categories.forEach((c) => {
+      if (c.name.toLowerCase() === name.toLowerCase()) {
+        alert("Category exists");
+        dupliacte=true
+      }
+    });
+    if(dupliacte)
+      return
     const response = await addCategory(name, color, icon);
     if (response.error) console.log("Error adding new category");
     else {
@@ -90,10 +79,10 @@ const CategoryPage = () => {
         <Modal
           isOpen={categoryFormOpen}
           onClose={() => {
-            setCategoryFormOpen(false)
-            setName('')
-            setColor('')
-            setIcon('')
+            setCategoryFormOpen(false);
+            setName("");
+            setColor("");
+            setIcon("");
           }}
         >
           <CategoryForm
@@ -106,7 +95,12 @@ const CategoryPage = () => {
             setIcon={setIcon}
             buttonLabel="Create Category"
             onClick={() => handleSubmit()}
-            onClose={() => setCategoryFormOpen(false)}
+            onCancel={() => {
+              setCategoryFormOpen(false)
+              setName('')
+              setColor('')
+              setIcon('')
+            }}
           />
         </Modal>
       )}

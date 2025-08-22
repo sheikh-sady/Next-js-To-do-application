@@ -1,4 +1,4 @@
-const DeleteIcon = ({ width, height, onClick }) => {
+const DeleteIcon = ({ width, height, onClick, color }) => {
   return (
     <svg
       data-testid="delete-icon-svg"
@@ -9,7 +9,7 @@ const DeleteIcon = ({ width, height, onClick }) => {
       stroke="currentColor"
       width={width}
       height={height}
-      className="hover:cursor-pointer text-red-500"
+      className={`hover:cursor-pointer ${color}`}
       onClick={onClick}
     >
       <path

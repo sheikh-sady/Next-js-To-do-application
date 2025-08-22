@@ -165,6 +165,7 @@ const Todo = ({ todo, status, filteredTodos }) => {
               width="18px"
               height="18px"
               onClick={() => handleDelete()}
+              color="text-red-500"
             />
           </div>
         </div>

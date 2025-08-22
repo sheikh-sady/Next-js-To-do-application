@@ -22,7 +22,10 @@ export default function CategoryProvider({ children }) {
       console.log("Response is", response);
       if (response.error) console.log("failed to fetch categories...");
       else {
-        const categoryArray = [{ name: "All Categories" }];
+        const categoryArray = [
+          { name: "All Categories" },
+          { name: "Personal", color: "blue", icon: "categoryIcon" },
+        ];
         response.categories.forEach((element) => {
           categoryArray.push(element);
         });

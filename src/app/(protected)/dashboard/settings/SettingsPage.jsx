@@ -144,7 +144,7 @@ const SettingsPage = ({ user }) => {
               <p className="text-gray-500">Remove all tasks and categories</p>
             </div>
             <div className="p-2 border-1 border-gray-300 rounded-lg flex gap-3 justify-center items-center hover:cursor-pointer hover:bg-red-100 hover:text-red-400">
-              <DeleteIcon width="20px" height="20px" />
+              <DeleteIcon width="20px" height="20px" color="text-red-500" />
               <p className="font-medium text-sm ">Clear All Data</p>
             </div>
           </div>
@@ -181,7 +181,7 @@ const SettingsPage = ({ user }) => {
               </p>
             </div>
             <div className="p-2 border-1 border-gray-300 rounded-lg flex gap-3 justify-center items-center hover:cursor-pointer hover:bg-red-100 hover:text-red-400">
-              <DeleteIcon width="20px" height="20px" />
+              <DeleteIcon width="20px" height="20px" color="text-red-500" />
               <p className="font-medium text-sm">Delete Account</p>
             </div>
           </div>
