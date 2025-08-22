@@ -70,7 +70,7 @@ export async function updateTodo(
     return;
   }
   let status;
-  if (todoStatus === "Todo") status = 0;
+  if (todoStatus === "To Do") status = 0;
   else if (todoStatus === "In Progress") status = 2;
   else status = 1;
   const res = await fetch(`/api/todos/${id}`, {
